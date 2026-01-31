@@ -1,0 +1,26 @@
+{
+  "name": "@thrift-it/api-gateway-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@thrift-it/api-gateway"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "api-gateway-e2e/jest.config.cts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@thrift-it/api-gateway:build",
+          "@thrift-it/api-gateway:serve"
+        ]
+      }
+    }
+  }
+}
