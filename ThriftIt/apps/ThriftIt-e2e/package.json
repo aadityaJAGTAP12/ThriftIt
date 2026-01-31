@@ -1,0 +1,26 @@
+{
+  "name": "@thrift-it/ThriftIt-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@thrift-it/ThriftIt"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/ThriftIt-e2e/jest.config.cts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@thrift-it/ThriftIt:build",
+          "@thrift-it/ThriftIt:serve"
+        ]
+      }
+    }
+  }
+}
